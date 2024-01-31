@@ -1,4 +1,5 @@
-Batch-curry reads from stdin a YAML list of argument lists and a set of command templates as arguments. It curries the commands with the argument lists, runs them, and captures the outputs, storing them in a new list.
+Curry-batch reads from stdin a YAML list of argument lists and a set of command templates as arguments.
+It curries the commands with the argument lists, runs them, and captures the outputs, storing them in a new list.
 
 Example:
 
