@@ -35,11 +35,11 @@ def execute_commands(commands, arguments):
 
 @click.command()
 @click.argument('commands', nargs=-1, required=True)
-def batch_curry(commands):
+def curry_batch(commands):
     input = sys.stdin.read()
     arguments = yaml.safe_load(input)
     output = execute_commands(commands, arguments)
     click.echo(yaml.dump(output))
 
 if __name__ == '__main__':
-    batch_curry()
+    curry_batch()

@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "batch-curry"
+name = "curry-batch"
 version = "0.1.0"
 description = "Curry a list of commands passed as arguments with a YAML list of argument lists, then output the command stdout as a new YAML list of lists."
 authors = ["Ben Skubi <bskubi@gmail.com>"]
@@ -11,7 +11,7 @@ python = "^3.12"
 pyyaml = "^6.0.1"
 
 [tool.poetry.scripts]
-batch-curry = "batch_curry.__main__:batch_curry"
+curry-batch = "curry_batch.__main__:curry_batch"
 
 [build-system]
 requires = ["poetry-core"]
