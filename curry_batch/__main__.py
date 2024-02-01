@@ -2,6 +2,7 @@ import click
 import subprocess
 import sys
 import yaml
+import os
 from multiprocessing import Pool
 
 def worker_init():
@@ -10,6 +11,7 @@ def worker_init():
     signal.signal(signal.SIGINT, signal.SIG_IGN)
 
 def execute_command(args):
+    env = os.environ.copy()
     command, arg_list, dryrun = args
     wc_dict = enumerate_wildcards(arg_list)
     try:
@@ -20,7 +22,7 @@ def execute_command(args):
         click.echo(formatted_command)
         result = ''
     else:
-        result = subprocess.run(formatted_command, shell=True, capture_output=True, text=True)
+        result = subprocess.run(formatted_command, shell=True, capture_output=True, text=True, env=env)
         result = result.stdout.strip()
     return result
 
