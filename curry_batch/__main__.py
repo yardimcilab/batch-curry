@@ -70,8 +70,6 @@ def enumerate_wildcards(arguments):
 def curry_batch(commands, shell, max_processes, dryrun):
     input = sys.stdin.read()
     arguments = yaml.safe_load(input)
-    if dryrun:
-        print("Curry-batch arguments:", arguments)
     output = execute_commands_multiprocessing(commands, arguments, shell, max_processes, dryrun)
     if not dryrun:
         click.echo(yaml.dump(output))
